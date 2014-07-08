@@ -7,7 +7,7 @@ using namespace std;
 int main(int argc, char const *argv[]) {
 	int nth = 1000;
 
-	if (string(argv[1]) == "-nth") {
+	if (argv[1] && string(argv[1]) == "-nth") {
 		nth = atoi(argv[2]);
 	}
 
@@ -15,7 +15,7 @@ int main(int argc, char const *argv[]) {
 	primes.push_back(2);
 
 	int i;
-	for (i = 3; primes.size() < nth; i++) {
+	for (i = 3; primes.size() < nth; i += 2) {
 		bool prime = true;
 
 		for (int j = 0; j < primes.size() && primes[j]*primes[j] <= i; j++) {
